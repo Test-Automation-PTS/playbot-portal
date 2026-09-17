@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850" role="img" aria-labelledby="title desc">
+<title id="title">Drei Keyword-Ebenen und automatische Auflösung</title>
+<desc id="desc">Ein Business-Keyword ruft Aktionsgruppen und technische Keywords auf. Der semantische Name Continue wird auf Sign-in und Workshop-Seite jeweils zum richtigen Button und zur importierten Kundenmethode aufgelöst.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#18273d}.head{font-size:28px;font-weight:700}.body{font-size:23px}.small{font-size:20px;fill:#52647c}.code{font-family:Consolas,monospace;font-size:23px}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8c9bae"/></marker></defs>
+<rect width="1440" height="850" rx="20" fill="#f2f5fa"/>
+<text x="60" y="65" class="head">Ein Geschäftsablauf – drei verständliche Ebenen</text>
+<rect x="60" y="100" width="1320" height="106" rx="14" fill="#18273d"/>
+<text x="90" y="141" style="font-size:23px;font-weight:700;fill:white">HIGH · Fachliches Ziel</text><text x="90" y="179" xml:space="preserve" style="font-size:25px;fill:white">Participant Books Workshop    alice    UI Automation    Bring a laptop</text>
+<path d="M720 211V238" stroke="#8c9bae" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="250" width="1320" height="105" rx="14" fill="#e4edfc"/>
+<text x="90" y="291" class="head">MEDIUM · Wiederverwendbare Aktionsgruppen</text><text x="90" y="330" style="font-size:21px">Sign In As Participant → Complete Workshop Form → Submit Workshop Booking → Ergebnis prüfen</text>
+<path d="M720 360V387" stroke="#8c9bae" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="400" width="1320" height="100" rx="14" fill="white" stroke="#d4dce7"/>
+<text x="90" y="441" class="head">LOW · Technische Einzelaktionen</text><text x="90" y="479" class="body">Input Field · Click Control · Select Option · Check Control</text>
+<text x="60" y="565" xml:space="preserve" class="head">Keys.Click    Continue</text><text x="500" y="565" class="small">Playbot erkennt die registrierte Seite und wählt Locator und Methode.</text>
+<rect x="60" y="595" width="640" height="155" rx="14" fill="white" stroke="#d4dce7"/>
+<text x="88" y="637" class="body">Seite: Sign in</text><text x="88" y="679" class="code">Continue → css=#sign-in</text><text x="88" y="720" class="small">Methode: UiWorkshop Click → Browser.Click</text>
+<rect x="740" y="595" width="640" height="155" rx="14" fill="white" stroke="#d4dce7"/>
+<text x="768" y="637" class="body">Seite: Choose workshop</text><text x="768" y="679" class="code">Continue → css=#book-workshop</text><text x="768" y="720" class="small">Methode: UiWorkshop Click → Browser.Click</text>
+<text x="60" y="804" class="small">Mappings sind explizit gepflegt. Fehlt ein Kunden-Override, greift Default &lt;Aktion&gt;. Keine KI-/DOM-Generierung.</text>
+</svg>

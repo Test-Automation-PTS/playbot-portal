@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800" role="img" aria-labelledby="title desc">
+<title id="title">JSON: fachlich gleiche Daten mit unterschiedlichen technischen Feldern</title>
+<desc id="desc">Originale Testdaten unterscheiden sich bei ID, Typ, Zeitstempel und Debug. Explizite Regeln normalisieren nur diese Felder; der Status bleibt Bestandteil des Vergleichs.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#18273d}.head{font-size:26px;font-weight:700}.code{font-family:Consolas,monospace;font-size:22px}.small{font-size:20px;fill:#52647c}</style></defs>
+<rect width="1440" height="800" rx="20" fill="#f2f5fa"/>
+<text x="60" y="65" class="head">JSON: Unterschiede gezielt behandeln, Originaldaten behalten</text>
+<g transform="translate(60 105)"><rect width="640" height="300" rx="16" fill="white" stroke="#d4dce7"/>
+<text x="26" y="44" class="head">Erwartet · expected.json</text>
+<text x="26" y="91" class="code">order.id:     "A-1"</text><text x="26" y="132" class="code">order.total:  "42"    ← String</text><text x="26" y="173" class="code">order.status: "ready"</text><text x="26" y="214" class="code">timestamp:    "2026-01-01"</text><text x="26" y="255" class="code">debug:        true</text></g>
+<g transform="translate(740 105)"><rect width="640" height="300" rx="16" fill="white" stroke="#d4dce7"/>
+<text x="26" y="44" class="head">Tatsächlich · actual.json</text>
+<text x="26" y="91" class="code">order.id:     "A-2"</text><text x="26" y="132" class="code">order.total:  42      ← Zahl</text><text x="26" y="173" class="code">order.status: "ready"</text><text x="26" y="214" class="code">timestamp:    "2026-01-02"</text><text x="26" y="255" class="code">debug:        false</text></g>
+<rect x="60" y="445" width="1320" height="165" rx="16" fill="#e4edfc"/>
+<text x="88" y="488" class="head">Explizite Kundenregeln · json-rules.json</text>
+<text x="88" y="532" class="small">1. ID auf beiden Kopien setzen    2. total in eine Zahl umwandeln</text>
+<text x="88" y="574" class="small">3. debug entfernen    4. timestamp ausblenden    5. Fachliche Felder vergleichen</text>
+<rect x="60" y="650" width="1320" height="100" rx="16" fill="#17653c"/>
+<text x="88" y="691" style="font-size:27px;font-weight:700;fill:white">Ergebnis nach diesen Regeln: keine Unterschiede</text>
+<text x="88" y="727" style="font-size:21px;fill:white">status = ready bleibt geprüft. Eingabedateien werden nicht überschrieben.</text>
+</svg>

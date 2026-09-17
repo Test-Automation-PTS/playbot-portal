@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="670" viewBox="0 0 1440 670" role="img" aria-labelledby="title desc">
+<title id="title">Playbot: strukturierte Daten, Dokumente und Browser</title>
+<desc id="desc">JSON und XML prüfen Daten, PDF prüft Text und Pixel, UI zeigt Keywords und Browser-Funktionen. Der gemeinsame Nachweis erfolgt in der Kundendemo mit Playbot 0.4.0.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#18273d}.label{font-size:16px;fill:#456082;letter-spacing:2px}.title{font-size:36px;font-weight:700}.head{font-size:27px;font-weight:700}.body{font-size:22px}.small{font-size:18px;fill:#52647c}</style></defs>
+<rect width="1440" height="670" rx="20" fill="#f2f5fa"/>
+<text x="60" y="58" class="label">PRÄSENTATION · UMSETZUNGSSTAND 09.09.2026</text>
+<text x="60" y="120" class="title">Daten vergleichen. Dokumente prüfen. UI verständlich testen.</text>
+<g transform="translate(60 165)"><rect width="420" height="270" rx="16" fill="white" stroke="#d4dce7"/><rect width="420" height="9" rx="4" fill="#174ea0"/>
+<text x="28" y="58" class="head">JSON + XML</text><text x="28" y="108" class="body">Regeln und Filter</text><text x="28" y="147" class="body">Strukturierte Unterschiede</text><text x="28" y="186" class="body">Berichte und Abbruchgrenzen</text><text x="28" y="237" class="small">7 Tickets abgeschlossen, inkl. Epic</text></g>
+<g transform="translate(510 165)"><rect width="420" height="270" rx="16" fill="white" stroke="#d4dce7"/><rect width="420" height="9" rx="4" fill="#087c83"/>
+<text x="28" y="58" class="head">PDF</text><text x="28" y="108" class="body">Text und echte Pixel</text><text x="28" y="147" class="body">Masken und Seitenfilter</text><text x="28" y="186" class="body">Schwärzung und lokale GUI</text><text x="28" y="237" class="small">12 Tickets, inkl. Konzept und Epic</text></g>
+<g transform="translate(960 165)"><rect width="420" height="270" rx="16" fill="white" stroke="#d4dce7"/><rect width="420" height="9" rx="4" fill="#6846a6"/>
+<text x="28" y="58" class="head">UI Workshop</text><text x="28" y="108" class="body">Drei Keyword-Ebenen</text><text x="28" y="147" class="body">Seiten- und Methodenauflösung</text><text x="28" y="186" class="body">Lokale Browser-Beispiele</text><text x="28" y="237" class="small">Neues Ticket + 4 Szenario-Tickets</text></g>
+<path d="M270 440V475H1170V440M720 475V505" fill="none" stroke="#8c9bae" stroke-width="3"/>
+<rect x="60" y="505" width="1320" height="110" rx="16" fill="#18273d"/>
+<text x="90" y="549" style="font-size:26px;font-weight:700;fill:white">Gemeinsamer Nachweis: freigegebenes Release + ausführbare Kundendemo</text>
+<text x="90" y="586" style="font-size:21px;fill:#dbe7fb">Playbot 0.4.0 · unveränderlicher Image-Digest · Robot / JUnit / Allure / Xray</text>
+</svg>

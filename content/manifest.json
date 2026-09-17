@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "latest": "0.6.1",
+  "repository": "Test-Automation-PTS/playbot-portal",
+  "url": "https://test-automation-pts.github.io/playbot-portal/",
+  "releases": [
+    {
+      "version": "0.6.1",
+      "date": "2026-09-11",
+      "source_ref": "v0.6.1",
+      "title": "Berichte verstehen. Module entdecken.",
+      "summary": "Wiederverwendbares Reporting, Datenbankzugriff und ein durchsuchbarer Einstieg in die öffentlichen Module.",
+      "highlights": [
+        "Reporting-Modul: PDF-Evidenz, Dashboard, vollständige Archivnavigation und Allure-Historie mit Fehlerkategorien.",
+        "Datenbanken: DatabaseLibrary mit Oracle im Thin-Modus, MySQL und PostgreSQL.",
+        "playbot discover: Modulübersicht, öffentliche Imports und JSON-Katalog ohne Laden optionaler Bibliotheken.",
+        "VS Code und RobotCode: dokumentierter Einstieg in Vervollständigung, Keyword-Signaturen und Navigation."
+      ],
+      "migration": "reporting und database bei Bedarf aktivieren. Die Release-Version und den Image-Digest gemeinsam aktualisieren. Für die Editor-Unterstützung dieselbe Revision und Extras wie in CI verwenden.",
+      "limitations": "Das universelle PDF/JSON/XML-Vergleichsdashboard (#157) ist ein Konzept. Pact/Broker (#151) ist ein eigener Folgeausbau.",
+      "source_revision": "26f3b95bbb659cf525958bfd7b136b99bf052070"
+    },
+    {
+      "version": "0.5.0",
+      "date": "2026-09-10",
+      "source_ref": "v0.5.0",
+      "title": "APIs testen. Abhängigkeiten kontrollieren.",
+      "summary": "HTTP-Tests, isolierte WireMock-Dienste und OpenAPI-Vertragsprüfung ergänzen die bestehenden Vergleiche.",
+      "highlights": [
+        "API-Modul: HTTP-Sessions, JSON/XML/Formular-Payloads, Status-, Header- und Laufzeitprüfungen.",
+        "WireMock: eigene Prozesse und Ports pro Worker, Mappings, Szenarien und Request-Verifikation.",
+        "OpenAPI 3.0/3.1: gebündelte JSON-Verträge für echte Request-/Response-Paare.",
+        "15 Kundenbeispiele für Transport, Payloads, Verträge, Fehler und Mock-Isolation."
+      ],
+      "migration": "api und optional api-mocks aktivieren. Lokal die passenden Extras, Java 11+ und das gepinnte WireMock-JAR installieren; beide Release-Images enthalten die Laufzeit bereits.",
+      "limitations": "Kein Pact/Broker, keine WSDL-Generierung oder XSD-Validierung. Laufzeitprüfungen ersetzen keinen Lasttest.",
+      "source_revision": "b8a3d9b9f3fdeab0993c1678f1ea26f082a307c6"
+    },
+    {
+      "version": "0.4.0",
+      "date": "2026-09-07",
+      "source_ref": "v0.4.0",
+      "title": "Daten, Dokumente und Oberflächen prüfen.",
+      "summary": "JSON/XML-Vergleiche und PDF-Funktionen sind finalisiert. Die spätere lokale UI-Demo zeigt die vorhandene Browser-API.",
+      "highlights": [
+        "JSON/XML: explizite Regeln, Filter, Änderungen, strukturierte Unterschiede und tatsächlicher früher Abbruch.",
+        "PDF: Text- und echter Pixelvergleich, Seitenanzahl, Masken und Fehlerartefakte.",
+        "Schwärzung: neue PNG- und Raster-PDF-Ausgaben ohne ursprüngliche Textebene.",
+        "Zwei Release-Profile: all-modules und all-modules-no-browser; pdf-gui bleibt lokal."
+      ],
+      "migration": "Das Release-Manifest und den unveränderlichen Image-Digest übernehmen. XML benötigt json und xml. Explizite Regex-Masken mit regex: kennzeichnen.",
+      "limitations": "Keine OCR oder automatische Erkennung personenbezogener Daten. Die UI-Demo vom 9. September erweitert die Kundenszenarien, nicht das Release 0.4.0.",
+      "source_revision": "67daa501a06e9127e17c69dd996c5e152deb8ed9"
+    }
+  ],
+  "source_revision": "4ad7bac247812f0cd458033a390d469db91eb93d"
+}

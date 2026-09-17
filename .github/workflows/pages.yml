@@ -1,0 +1,48 @@
+name: Build and publish developer portal
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '17,47 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: portal-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: Test-Automation-PTS/playbot-demo-reports
+          ref: gh-pages
+          path: reports-source
+          persist-credentials: false
+      - run: node scripts/build.mjs --reports reports-source
+      - uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: dist
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v6.0.0
+      - uses: actions/deploy-pages@v5.0.1
+        id: deploy
