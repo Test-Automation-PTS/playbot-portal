@@ -35,10 +35,12 @@ The framework's `playbot-presentation` skill and MR checklist maintain this
 contract. Private source links are labeled; public documentation is rendered
 locally and does not depend on GitHub authentication.
 
-The framework's `Public developer portal` workflow validates PRs and, after
-integration on `main`, updates `content/` with a repository-scoped deploy key.
-No private code, customer files, credentials or raw private CI artifacts are
-imported. The portal workflow checks the existing public report repository
+The framework's `Public developer portal` workflow validates the export on PRs
+and retains it as a review artifact. Its presentation skill prepares a companion
+portal MR with the exported changes and cross-links both MRs. Merging that portal
+MR publishes the documentation automatically; no cross-repository key or new
+secret is needed. No private code, customer files, credentials or raw private CI
+artifacts are imported. The portal workflow checks the public report repository
 every 30 minutes (GitHub may delay schedules), builds and deploys GitHub Pages.
 
 Reports are copied with their archive structure intact. The report environment
