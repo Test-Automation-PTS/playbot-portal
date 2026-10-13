@@ -476,3 +476,21 @@ After One Affected Page`. Es wurden keine Kundendokumente für diese Bilder verw
 [i60]: https://github.com/Test-Automation-PTS/playbot/issues/60
 [i61]: https://github.com/Test-Automation-PTS/playbot/issues/61
 [i63]: https://github.com/Test-Automation-PTS/playbot/issues/63
+
+## Unreleased: Allure mit einem Publish-tests-Schritt veröffentlichen
+
+Kundenprojekte können einen vorbereiteten `actions/publish-tests`-Schritt nutzen:
+Report-Repository-URL, Environment und eng begrenztes Secret übergeben; Playbot
+übernimmt History, Metadaten, Allure-Erzeugung, Index und Run-Archive. Es werden
+keine Veröffentlichungs-Skripte ins Kundenprojekt kopiert.
+
+Der Environment-Name steht im Report-Titel, in den Metadaten und im URL-Pfad.
+Jede Umgebung erhält einen eigenen Verlauf und bis zu zwanzig vollständige
+Run-Archive. Die GitHub-Zusammenfassung verlinkt den aktuellen und archivierten
+Report. Ein fehlgeschlagener Test bleibt fehlgeschlagen, auch wenn sein Report
+veröffentlicht wird.
+
+[Einrichtung im Kundenprojekt](../docs/customer.md#unreleased-one-publish-tests-step-for-github-pages).
+Diese Action ist noch kein Bestandteil eines neuen Runtime-Releases. Der Renderer
+verwendet das unveränderte 0.6.1-Image; die neue Action wird über ihren Commit
+referenziert. Report-Hosting, Sichtbarkeit und Berechtigungen bleiben beim Kunden.
