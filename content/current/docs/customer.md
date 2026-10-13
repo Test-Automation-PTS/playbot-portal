@@ -155,3 +155,35 @@ python -m robot.libdoc DatabaseLibrary database-keywords.html
 its local equivalent when using `%{PLAYBOT_HOME}` imports. The customer demo includes
 an environment setup helper and VS Code recommendations. Do not copy framework
 implementation files into a customer project just to get completion.
+
+## Unreleased: one Publish tests step for GitHub Pages
+
+The reusable `actions/publish-tests` action publishes Allure results to a
+separate GitHub report repository. Customers provide its URL, the test
+environment and a scoped credential. Playbot owns history restoration,
+metadata, rendering, environment index and twenty-run archives. The destination
+must already have GitHub Pages configured on `gh-pages`.
+
+```yaml
+- name: Publish tests
+  if: always() && !cancelled()
+  uses: Test-Automation-PTS/playbot/actions/publish-tests@<reviewed-commit>
+  with:
+    repository: https://github.com/example/customer-reports
+    environment: ${{ inputs.profile }}
+    token: ${{ secrets.REPORT_DEPLOY_TOKEN }}
+    redact: ${{ secrets.TEST_USER_PASSWORD }}
+```
+
+Enable `allure` in Playbot config and add
+`--listener allure_robotframework:reports/allure-results` to the test run.
+Serialize runs publishing to the same report repository with workflow concurrency.
+The environment name appears in titles, metadata, URLs and the report index;
+history is isolated by environment. The action publishes failed results too;
+it does not override the test exit code. Public input is limited to textual
+results; binary attachments and symlinks fail publication.
+
+See [Publish tests setup and contract](https://github.com/Test-Automation-PTS/playbot/blob/codex/publish-tests-action/actions/publish-tests/README.md) for
+permissions, redaction limits and optional inputs. This adapter is unreleased;
+it renders with the immutable 0.6.1 image and takes adapter code from the action
+commit, without changing the released image.
