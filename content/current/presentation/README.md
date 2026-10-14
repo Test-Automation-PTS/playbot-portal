@@ -12,6 +12,16 @@ Entwicklerablauf: **Modul wählen → konfigurieren → Doctor → Tests → Ber
 Framework und Images werden zentral gepflegt; Tests, Testdaten, Seiten,
 Locators und fachliche Keywords gehören in das Kundenprojekt.
 
+## Unreleased: Parallele E2E-Stage mit Zusammenfassung
+
+Das vorhandene Modul `parallel` startet unabhängige Tests über pabot. Das Modul
+`reporting` ergänzt `stage-summary`: eine Tabelle mit Umgebung, Ergebnis,
+Testzahlen und Dauer sowie einen korrelierten JSON-Nachweis für die Deployment-Pipeline.
+Fehlende, leere oder fehlgeschlagene Ergebnisse sperren die Freigabe.
+Der GitHub-Adapter `actions/stage-summary` wird auf einen unveränderlichen Commit
+gepinnt und kann unabhängig vom bestehenden Docker-Image eingesetzt werden.
+Die Funktion gehört noch zu keinem veröffentlichten Runtime-Release.
+
 ## Aktuell: Was seit der ersten Präsentation hinzugekommen ist
 
 | Release | Wichtigste Neuerung | Nutzen für Entwickler |

@@ -359,3 +359,16 @@ installation), `pymysql` and `psycopg2`. Import
 configuration belong to the customer. Playbot adds no SQL abstraction, retries or
 implicit transaction behavior. DatabaseLibrary normally commits after successful
 statements; use `no_transaction=True` deliberately when demonstrating rollback.
+
+## Stage summary (Unreleased)
+
+`reporting stage-summary` aggregates final Robot/Pabot JUnit results into JSON,
+Markdown and a CI job summary. Configure it with stage/environment and deployment
+correlation metadata. Missing or failed tests fail the gate. The reusable GitHub adapter `actions/stage-summary` accepts `junit`, `output`,
+`stage`, `environment`, `request-id`, `source-sha` and the test step `outcome`.
+Activate `parallel` and use `run --parallel --processes 2 -- --testlevelsplit`
+for independent test cases; browser sessions and test data must be isolated.
+
+The upcoming container build updates Allure to 2.46.1 and applies checksum-pinned
+Jackson 2.22.3 security patches to the command line and plugin copies. Published
+image digests remain immutable.
